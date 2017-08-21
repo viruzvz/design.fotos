@@ -1,0 +1,72 @@
+// references
+@import (reference) "vendors/references";
+
+// utils
+@import "utils/separators";
+@import "utils/text";
+
+// base
+@import "base/typography";
+
+// tweaks
+@import "tweaks/styles";
+
+// componentes
+@import "components/dropdown-menu";
+@import "components/acessibilidade";
+@import "components/apex";
+@import "components/label";
+@import "components/glyphicon";
+@import "components/flag";
+@import "components/stack";
+@import "components/circle";
+@import "components/fa-ul";
+@import "components/navs";
+@import "components/socialstamp";
+//@import "components/icons";
+
+// layout
+
+@import "layout/boxing";
+
+// terceiros
+@import "~Yamm/yamm/yamm";
+@import "~deaaz/app/less/az";
+
+.Arrange--wrap {
+  flex-wrap: wrap;
+}
+.link-white > {
+  color:#f1f1f1;
+  &:hover {
+    color:#fff;
+  }
+}
+.link-gray >{
+  color:#333;
+  &:hover {
+    .circle--cut,.circle--gray,.circle--grayless,.circle--white {
+      background: #27425c !important;
+      color: #fff;
+    }
+  }
+}
+//////////////////////////// Caption Degrade
+.Caption--gradient {
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 74%,rgba(0,0,0,0.65) 100%) !important;
+}
+.nano {
+  height: 260px;
+}
+
+
+@media (max-width: @screen-xs-max) {
+  .circle-absolute {
+    position: inherit;
+  }
+}
+
+
+
+
+

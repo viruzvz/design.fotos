@@ -1,0 +1,22 @@
+.NavGlobal.navbar.navbar-static-top
+
+  .container
+
+    .u-sizeFitAlt
+
+      .dropdown.pull-right
+        a.flat.dropdown-toggle(data-toggle='dropdown', href="#")
+          .Icon.Icon--menu.Icon--md
+          = ' '
+          span.u-alignMiddle Portais
+        ul.dropdown-menu--dark.dropdown-menu
+          include portais
+
+    .u-sizeFit
+      img(src='http://www12.senado.leg.br/hpsenado/++resource++senado.hpsenado/img/br.svg', alt='Senado Federal', height=20)
+      span.micro &nbsp; &nbsp;
+      span.milli.u-alignMiddle: strong BRASIL
+
+    .u-sizeFill.text-center
+      .hidden-xs
+        a.flat(href='http://www12.senado.gov.br/institucional/falecomosenado') Fale com o Senado

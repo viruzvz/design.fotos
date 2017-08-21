@@ -1,0 +1,41 @@
+mixin Card(src)
+  .u-posRelative
+    .Embed.Embed--3by2(class='+cut')
+      img(src=src)
+    .Caption.Caption--film.Caption--gradient.l-box
+      block
+
+mixin Flag(src, width)
+  .Flag
+    .Flag-figure
+      img(src=src width=width)
+    .Flag-body
+      .Clamp-text
+        a.link-white(href='#')
+          block
+mixin Flag-circle(icon,classes,title)
+  .Flag.Flag--center
+    .Flag-figure
+      .Icon(class=icon)
+    .Flag-body(class=classes)
+      div: strong=title
+      small
+        block
+mixin News(icon,text)
+  li
+    .t-line
+    i.fa-li(class=icon)
+    // Especifico para o Senado Agora
+    span.dropdown.pull-right
+      i.dropdown-toggle.glyphicon.glyphicon-option-vertical(id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+      ul.dropdown-menu.CutHere(aria-labelledby="dropdownMenu1")
+        li: a(href='#')
+          span.SocialStamp.SocialStamp--facebook.Icon.Icon--facebook
+          span Facebook
+        li: a(href='#')
+          span.SocialStamp.SocialStamp--twitter.Icon.Icon--twitter
+          span Twitter
+    small
+      =text
+    p: a(href='#')
+      block

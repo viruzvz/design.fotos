@@ -1,0 +1,30 @@
+{
+  "name": "design.fotos",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "mosaaaico2 build",
+    "dev": "mosaaaico2 dev",
+    "test": "standard && stylelint src/**/*.{less,css}"
+  },
+  "devDependencies": {
+    "mosaaaico2": "fabianonunes/mosaaaico2#develop",
+    "standard": "^10.0.2",
+    "stylelint": "^7.10.1",
+    "yaml-loader": "^0.4.0"
+  },
+  "dependencies": {
+    "Yamm": "geedmo/yamm3",
+    "bootstrap": "^3.3.5",
+    "deaaz": "fabianonunes/deaaz#0.0.6",
+    "design.noticias": "git+ssh://git@www12dsv.senado.leg.br/design/design-noticias.git#develop",
+    "design.shell": "fabianonunes/design.shell#2.3.0",
+    "flexboxgrid": "^6.3.1",
+    "jquery": "^2.1.4",
+    "senado.css": "agenciasenado/senado.css#develop",
+    "suitcss-utils-size": "^2.0.0"
+  },
+  "stylelint": {
+    "extends": "mosaaaico2/stylelint"
+  }
+}

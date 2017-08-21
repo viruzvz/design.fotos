@@ -1,0 +1,162 @@
+extends /design.shell/src/layout
+
+block stylesheets
+  link(rel="stylesheet" href="styles/vendors.css")
+  link(rel="stylesheet" href="styles/main.css")
+
+block portaltopo
+
+  .Acessibilidade.hidden-xs
+    .container
+      include pug/partials/acessibilidade
+
+  .container
+    include pug/portaltopo
+
+block navglobal
+  include pug/partials/navglobal
+
+block content
+  .container
+    .main-flex.u-spacer--xl
+      .content-one(class='+senado')
+        #carousel-modulo-noticias.carousel.slide(data-ride='carousel')
+          // Indicators
+          ol.carousel-indicators
+            li.active(data-target='#carousel-modulo-noticias', data-slide-to='0')
+            li(data-target='#carousel-modulo-noticias', data-slide-to='1')
+            li(data-target='#carousel-modulo-noticias', data-slide-to='2')
+          // Wrapper for slides
+          .carousel-inner(role='listbox')
+            .item.active
+              .Box.Box--flush.delta
+                .Embed.Embed--3by2
+                  img.img-responsive(src='assets/img/slider.jpeg', alt='Sec')
+                  .Caption.Caption--film.Box Quadra de fatalis planeta, examinare demissio!
+            .item
+              .Box.Box--flush.delta
+                .Embed.Embed--3by2
+                  img.img-responsive(src='assets/img/slider.jpeg', alt='Sec')
+                  .Caption.Caption--film.Box Quadra de fatalis planeta, examinare demissio!
+          // Controls
+          a.left.carousel-control(href='#carousel-modulo-noticias', role='button', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+            span.sr-only Previous
+          a.right.carousel-control(href='#carousel-modulo-noticias', role='button', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+            span.sr-only Next
+
+      .content-two(class='+senado')
+        a(href='#')
+          .Box.Box--flush
+            .Embed.Embed--3by2
+              img.img-responsive(src='assets/img/slider.jpeg', alt='Sec')
+              .Caption.Caption--film.Box Quadra de fatalis planeta, examinare demissio!
+
+        .divider
+
+        .CutHere-edited
+          .content-news
+            a(href='#')
+              .pull-left
+                img.Thumb(src='assets/img/slider.jpeg')
+              .comment
+                small João Alberto arquiva representação contra Aécio Neves
+          .content-news
+            a(href='#')
+              .pull-left
+                img.Thumb(src='assets/img/slider.jpeg')
+              .comment
+                small João Alberto arquiva representação contra Aécio Neves
+
+      .content-three.Box.Box--x(class='+cut')
+        .milli
+          .Box--lg.Box--y.Apex--cut
+            span.icon-senado
+            |  ÚLTIMAS NOTÍCIAS
+          .nano
+            .nano-content
+              ul.fa-ul.Box--lg.Box--y(class='+c-style--one')
+                li
+                  .t-line(class='+c-style--two')
+                  i.fa-li.icon-volume-medium
+                  small 29 de Maio, 2017 19h10 - Rádio
+                  p: a(href='#') Roberto Rocha pede a líderes indicação de senadores para compor CPI
+
+                li
+                  .t-line(class='+c-style--two')
+                  i.fa-li.icon-plenario
+                  small 29 de Maio, 2017 19h10 - Plenário
+                  p: a(href='#') Roberto Rocha pede a líderes indicação de senadores para compor CPI
+
+                li
+                  .t-line(class='+c-style--two')
+                  i.fa-li.icon-video
+                  small 29 de Maio, 2017 19h10 - Vídeo
+                  p: a(href='#') Roberto Rocha pede a líderes indicação de senadores para compor CPI
+
+                li
+                  .t-line(class='+c-style--two')
+                  i.fa-li.icon-video
+                  small 29 de Maio, 2017 19h10 - Vídeo
+                  p: a(href='#') Roberto Rocha pede a líderes indicação de senadores para compor CPI
+
+                li
+                  .t-line(class='+c-style--two')
+                  i.fa-li.icon-video
+                  small 29 de Maio, 2017 19h10 - Vídeo
+                  p: a(href='#') Roberto Rocha pede a líderes indicação de senadores para compor CPI
+          a.btn.btn-primary.btn-block.u-spacer(href='#', title='Veja mais notícias')
+            span.glyphicon.glyphicon-zoom-in
+            |  Veja mais notícias
+
+
+    .main-flex.u-spacer--xl
+      .flex-item.col-md-4.u-spacer(class='+cut')
+        a.link(href='#').Flag.Box--xl.Box--y
+          .Flag-figure
+            .icon-calendar.zeta.circle.circle-position.circle-style--three
+          .Flag-body
+            .zeta Agenda Legislativa
+            div
+              small Nunquam gratia guttus Cur impositio resistere?
+      .flex-item.col-md-6.u-spacer(class='+b-style--three')
+        .row
+          .col-md-7
+            a.link(href='#').Flag.Box--xl.Box--y
+              .Flag
+                .Flag-figure
+                  .icon-rss.zeta.circle.circle-position.circle-style--two
+                .Flag-body
+                  .zeta Senado Notícias
+                  div
+                    small Nunquam gratia guttus Cur impositio resistere?
+          .col-md-5
+            .CutHere-edited(class='+border-left +c-style--four')
+              a.link(href='#').Flag.Box--sm.Box--y
+                .Flag-figure
+                  span.icon-display.circle--sm.circle-style--two.circle-position--sm
+                .Flag-body
+                  strong  TV Senado
+              a.link(href='#').Flag.Box--sm.Box--y
+                .Flag-figure
+                  span.icon-mic.circle--sm.circle-style--two.circle-position--sm
+                .Flag-body
+                  strong  Rádio Senado
+              a.link(href='#').Flag.Box--sm.Box--y
+                .Flag-figure
+                  span.icon-newspaper.circle--sm.circle-style--two.circle-position--sm
+                .Flag-body
+                  strong  Jornal Senado
+      .flex-item.col-md-4.u-spacer(class='+cut')
+        a.link(href='#').Flag.Box--xl.Box--y
+          .Flag-figure
+            .icon-user-tie.circle.zeta.circle-style--one.circle-position
+          .Flag-body
+            .zeta Notícias da Presidência
+            div
+              small Nunquam gratia guttus Cur impositio resistere?
+
+  script(src="//code.jquery.com/jquery-3.1.1.min.js")
+  script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+  script(src="js/main.js")

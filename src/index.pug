@@ -1,0 +1,28 @@
+extends /design.shell/src/layout
+
+block stylesheets
+  link(rel="stylesheet" href="styles/vendors.css")
+  link(rel="stylesheet" href="styles/main.css")
+
+block portaltopo
+
+  .Acessibilidade.hidden-xs
+    .container
+      include pug/partials/acessibilidade
+
+  .container
+    include pug/portaltopo
+
+block navglobal
+  include pug/partials/navglobal
+
+include pug/partials/mixins
+
+block content
+  .container
+    | a
+
+
+  script(src="//code.jquery.com/jquery-3.1.1.min.js")
+  script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+  script(src="js/main.js")

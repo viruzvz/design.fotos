@@ -1,0 +1,38 @@
+// vendors
+@import "vendors/bootstrap";
+@import "vendors/senado";
+@import "vendors/noticias";
+
+// @import (inline) "~flexboxgrid/dist/flexboxgrid.css";
+
+// extensões
+@import "ext/bootstrap";
+
+// customização do bootstrap
+@link-color: #3e6892;
+@font-family-base:
+  'Lucida Grande',
+  'Lucida Sans Unicode',
+  'Lucida Sans',
+  Geneva,
+  Verdana,
+  sans-serif;
+
+.carousel-indicators {
+	position: absolute;
+	left: 50%;
+	z-index: 15;
+	width: 60%;
+	margin-left: -30%;
+	padding-left: 0;
+	list-style: none;
+	text-align: center;
+	top: 20px;
+  bottom: inherit;
+}
+
+@media screen and (min-width: 768px) {
+	.carousel-indicators {
+		top: 20px;
+	}
+}
