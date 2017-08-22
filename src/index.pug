@@ -19,8 +19,28 @@ block navglobal
 include pug/partials/mixins
 
 block content
-  .container
-    | a
+  .Mosaico
+    .Mosaico-container
+      .Mosaico-banda
+        .Mask
+        - for (var i = 0; i < 4; i++) {
+        .Embed.Embed--1by1: img(src='https://unsplash.it/300/300/?random')
+        - }
+      .Mosaico-banda
+        - for (var i = 0; i < 4; i++) {
+        .Embed.Embed--1by1: img(src='https://unsplash.it/300/300/?random')
+        - }
+      .Mosaico-painel
+      .Mosaico-banda
+        - for (var i = 0; i < 4; i++) {
+        .Embed.Embed--1by1: img(src='https://unsplash.it/300/300/?random')
+        - }
+      .Mosaico-banda
+        .Mask.Mask--inverse
+        - for (var i = 0; i < 4; i++) {
+        .Embed.Embed--1by1: img(src='https://unsplash.it/300/300/?random')
+        - }
+
 
 
   script(src="//code.jquery.com/jquery-3.1.1.min.js")

@@ -1,70 +1,144 @@
-// references
-@import (reference) "vendors/references";
+@mosaico-height: 400px;
 
-// utils
-@import "utils/separators";
-@import "utils/text";
+@banda-width: @mosaico-height / 4;
+@painel-width: 1140px;
 
-// base
-@import "base/typography";
+@mosaico-width: calc(@banda-width * 4 + @painel-width);
 
-// tweaks
-@import "tweaks/styles";
-
-// componentes
-@import "components/dropdown-menu";
-@import "components/acessibilidade";
-@import "components/apex";
-@import "components/label";
-@import "components/glyphicon";
-@import "components/flag";
-@import "components/stack";
-@import "components/circle";
-@import "components/fa-ul";
-@import "components/navs";
-@import "components/socialstamp";
-//@import "components/icons";
-
-// layout
-
-@import "layout/boxing";
-
-// terceiros
-@import "~Yamm/yamm/yamm";
-@import "~deaaz/app/less/az";
-
-.Arrange--wrap {
-  flex-wrap: wrap;
+.Mosaico {
+  overflow: hidden;
 }
-.link-white > {
-  color:#f1f1f1;
-  &:hover {
-    color:#fff;
-  }
+.Mosaico-container {
+  display: flex;
+  transform: translateX(-50%);
+  left: 50vw;
+  position: relative;
+  width: @mosaico-width;
+  height: @mosaico-height;
 }
-.link-gray >{
-  color:#333;
-  &:hover {
-    .circle--cut,.circle--gray,.circle--grayless,.circle--white {
-      background: #27425c !important;
-      color: #fff;
+
+.Mosaico-banda {
+  position: relative;
+  min-width: @banda-width;
+}
+
+.Mask {
+  position: absolute;
+  background: linear-gradient(to right, #fff 0%, #fff 20%, transparent 100%);
+  top: 0;
+  left: 0 ;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.Mask--inverse {
+  background: linear-gradient(to left, #fff 0%, #fff 20%, transparent 100%);
+}
+
+.Mosaico-painel {
+  width: @painel-width;
+  background: lightblue;
+  border: 2px solid #fff;
+  border-width: 2px 0;
+  margin: 0 2px;
+}
+
+.Mosaico-banda {
+  display: flex;
+  flex-direction: column;
+  .Embed {
+    height: 25%;
+    > img {
+      border: 2px solid #fff;
     }
   }
 }
-//////////////////////////// Caption Degrade
-.Caption--gradient {
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 74%,rgba(0,0,0,0.65) 100%) !important;
-}
-.nano {
-  height: 260px;
+
+.Embed--1by1 {
+  padding-bottom: 100%;
 }
 
+// @media (max-width: 768px) {
+//   .Mosaico-banda:first-child,
+//   .Mosaico-banda:last-child {
+//     display: none;
+//   }
 
-@media (max-width: @screen-xs-max) {
-  .circle-absolute {
-    position: inherit;
-  }
-}
+//   .Mosaico-painel {
+//     width: ~"calc((100vw - 1140px) / 2)";
+//   }
+// }
+
+
+
+// // references
+// @import (reference) "vendors/references";
+
+// // utils
+// @import "utils/separators";
+// @import "utils/text";
+
+// // base
+// @import "base/typography";
+
+// // tweaks
+// @import "tweaks/styles";
+
+// // componentes
+// @import "components/dropdown-menu";
+// @import "components/acessibilidade";
+// @import "components/apex";
+// @import "components/label";
+// @import "components/glyphicon";
+// @import "components/flag";
+// @import "components/stack";
+// @import "components/circle";
+// @import "components/fa-ul";
+// @import "components/navs";
+// @import "components/socialstamp";
+// //@import "components/icons";
+
+// // layout
+
+// @import "layout/boxing";
+
+// // terceiros
+// @import "~Yamm/yamm/yamm";
+// @import "~deaaz/app/less/az";
+
+// .Arrange--wrap {
+//   flex-wrap: wrap;
+// }
+// .link-white > {
+//   color:#f1f1f1;
+//   &:hover {
+//     color:#fff;
+//   }
+// }
+// .link-gray >{
+//   color:#333;
+//   &:hover {
+//     .circle--cut,.circle--gray,.circle--grayless,.circle--white {
+//       background: #27425c !important;
+//       color: #fff;
+//     }
+//   }
+// }
+// //////////////////////////// Caption Degrade
+// .Caption--gradient {
+//   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 74%,rgba(0,0,0,0.65) 100%) !important;
+// }
+// .nano {
+//   height: 260px;
+// }
+
+
+// @media (max-width: @screen-xs-max) {
+//   .circle-absolute {
+//     position: inherit;
+//   }
+// }
 
 
 

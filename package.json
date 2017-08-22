@@ -23,8 +23,5 @@
     "jquery": "^2.1.4",
     "senado.css": "agenciasenado/senado.css#develop",
     "suitcss-utils-size": "^2.0.0"
-  },
-  "stylelint": {
-    "extends": "mosaaaico2/stylelint"
   }
 }
