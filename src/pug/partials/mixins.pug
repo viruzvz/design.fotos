@@ -1,41 +1,14 @@
-mixin Card(src)
-  .u-posRelative
-    .Embed.Embed--3by2(class='+cut')
-      img(src=src)
-    .Caption.Caption--film.Caption--gradient.l-box
-      block
-
-mixin Flag(src, width)
-  .Flag
-    .Flag-figure
-      img(src=src width=width)
-    .Flag-body
-      .Clamp-text
-        a.link-white(href='#')
-          block
-mixin Flag-circle(icon,classes,title)
-  .Flag.Flag--center
-    .Flag-figure
-      .Icon(class=icon)
-    .Flag-body(class=classes)
-      div: strong=title
-      small
-        block
-mixin News(icon,text)
-  li
-    .t-line
-    i.fa-li(class=icon)
-    // Especifico para o Senado Agora
-    span.dropdown.pull-right
-      i.dropdown-toggle.glyphicon.glyphicon-option-vertical(id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
-      ul.dropdown-menu.CutHere(aria-labelledby="dropdownMenu1")
-        li: a(href='#')
-          span.SocialStamp.SocialStamp--facebook.Icon.Icon--facebook
-          span Facebook
-        li: a(href='#')
-          span.SocialStamp.SocialStamp--twitter.Icon.Icon--twitter
-          span Twitter
-    small
-      =text
-    p: a(href='#')
-      block
+mixin thumbs(text, css)
+  .col-md-2.u-spacer--lg
+    .Mosaico-link
+      a(href='https://static.pexels.com/photos/402023/pexels-photo-402023.jpeg')
+        img.img-responsive(src='https://static.pexels.com/photos/402023/pexels-photo-402023.jpeg', alt='One')
+        .overlay
+          .text
+            span.glyphicon.glyphicon-zoom-in
+mixin mosaico()
+  a.Mosaico-link(href='#').Embed.Embed--1by1
+    img(src='https://unsplash.it/300/300/?random')
+    .overlay
+      .text
+        span.glyphicon.glyphicon-zoom-in

@@ -6,10 +6,6 @@ block stylesheets
 
 block portaltopo
 
-  .Acessibilidade.hidden-xs
-    .container
-      include pug/partials/acessibilidade
-
   .container
     include pug/portaltopo
 
@@ -19,30 +15,73 @@ block navglobal
 include pug/partials/mixins
 
 block content
-  .Mosaico
+  .Mosaico.u-spacer--xl
     .Mosaico-container
       .Mosaico-banda
         .Mask
         - for (var i = 0; i < 4; i++) {
-        .Embed.Embed--1by1: img(src='https://unsplash.it/300/300/?random')
+        +mosaico
         - }
       .Mosaico-banda
         - for (var i = 0; i < 4; i++) {
-        .Embed.Embed--1by1: img(src='https://unsplash.it/300/300/?random')
+        +mosaico
         - }
       .Mosaico-painel
+        img.Mosaico--grid(src='assets/mask.svg')
+        img.img-responsive(src='http://www.planwallpaper.com/static/images/recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg')
       .Mosaico-banda
         - for (var i = 0; i < 4; i++) {
-        .Embed.Embed--1by1: img(src='https://unsplash.it/300/300/?random')
+        +mosaico
         - }
       .Mosaico-banda
         .Mask.Mask--inverse
         - for (var i = 0; i < 4; i++) {
-        .Embed.Embed--1by1: img(src='https://unsplash.it/300/300/?random')
+        +mosaico
         - }
+  .container
+    .row
+      .col-md-12.u-spacer--lg
+        #imaginary_container
+          .input-group.stylish-input-group
+            input.form-control(type='text', placeholder='Buscar abaixo')
+            span.input-group-addon
+              button(type='submit')
+                span.glyphicon.glyphicon-search
+      .col-md-12.u-spacer--xl
+        span.line
+          h2
+            span.zeta Galeria
+      .col-md-12.u-spacer--xl
+        .row.u-spacer--xl
+          - for (var i = 0; i < 6; i++) {
+            +thumbs
+            - }
 
-
-
+        .row.u-spacer--xl
+          - for (var i = 0; i < 6; i++) {
+            +thumbs
+            - }
+        .row
+          - for (var i = 0; i < 6; i++) {
+            +thumbs
+            - }
+      .col-md-12.u-spacer--xl
+        span.line
+          h2
+            span.zeta Exposições
+      .col-md-12.u-spacer--xl
+        .row.u-spacer--xl
+          - for (var i = 0; i < 6; i++) {
+            +thumbs
+            - }
+        .row.u-spacer--xl
+          - for (var i = 0; i < 6; i++) {
+            +thumbs
+            - }
+        .row
+          - for (var i = 0; i < 6; i++) {
+            +thumbs
+            - }
   script(src="//code.jquery.com/jquery-3.1.1.min.js")
   script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
   script(src="js/main.js")
