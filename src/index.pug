@@ -27,8 +27,10 @@ block content
         +mosaico
         - }
       .Mosaico-painel
-        img.Mosaico--grid(src='assets/mask.svg')
-        img.img-responsive(src='http://www.planwallpaper.com/static/images/recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg')
+        img.Mosaico--grid.hide(src='assets/mask.svg')
+        .Embed.Embed--5by2
+          - var seed = Math.random()
+          img(src='https://unsplash.it/5000/2000?random&seed=' + seed)
       .Mosaico-banda
         - for (var i = 0; i < 4; i++) {
         +mosaico
