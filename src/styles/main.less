@@ -2,7 +2,6 @@
 
 @banda-width: @mosaico-height / 4;
 @painel-width: 1140px;
-
 @mosaico-width: calc(@banda-width * 4 + @painel-width);
 
 .Mosaico {
@@ -16,12 +15,17 @@
   width: @mosaico-width;
   height: @mosaico-height;
 }
-
 .Mosaico-banda {
   position: relative;
   min-width: @banda-width;
 }
-
+.l-box--extra {
+  padding: 25px;
+}
+.l-box--screen {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 .Mask {
   position: absolute;
   background: linear-gradient(to right, #fff 0%, #fff 20%, transparent 100%);
@@ -31,11 +35,9 @@
   right: 0;
   z-index: 1;
 }
-
 .Mask--inverse {
   background: linear-gradient(to left, #fff 0%, #fff 20%, transparent 100%);
 }
-
 .Mosaico-painel {
   width: @painel-width;
   background-image: url(https://unsplash.it/5000/2000?random);
@@ -44,30 +46,23 @@
   display: flex;
   flex-wrap: wrap;
 }
-
-.Ladrilho:nth-child(5n) {
+.Mosaico-square:nth-child(5n) {
   width: 20%;
 }
-
-.Ladrilho {
+.Mosaico-square {
   width: 10%;
   height: 25%;
   transition: background 0.6s ease;
-
-
   &:hover {
     background: rgba(255, 255, 255, 0.6);
   }
 }
-
-.Mosaico-banda, .Ladrilho {
+.Mosaico-banda, .Mosaico-square {
   border-right: 3px solid #fff;
 }
-
-.Mosaico-link, .Ladrilho {
+.Mosaico-link, .Mosaico-square {
   border-bottom: 3px solid #fff;
 }
-
 .Mosaico--grid {
   position: absolute;
   z-index: 10;
@@ -95,7 +90,6 @@
 .Embed--5by2 {
   padding-bottom: 40%;
 }
-
 .overlay {
   position: absolute;
   top: 0;
@@ -105,7 +99,6 @@
   height: 100%;
   width: 100%;
   opacity: 0;
-  border: 2px solid #fff;
   transition: .5s ease;
   background-color: #333;
 }
@@ -117,6 +110,20 @@
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+.Apex--dotted {
+  border-bottom: 1px dotted #ccc;
+}
+.Square {
+  justify-content: center;
+  padding: 0;
+  height: 2.2em;
+  width: 2.2em;
+  text-align: center;
+  line-height: 1.2;
+  align-items: center;
+  flex-direction: column;
+  display: inline-flex;
 }
 ////////////// Busca da galeria
 .stylish-input-group .input-group-addon{
@@ -131,95 +138,77 @@
     border:0;
     background:transparent;
 }
-
+////////////// Borda texto borda igual fildset com borda e titulo.
 .linear-gradient{display:block; margin:0 25px}
 .line h2{font-size:15px; text-align:center; border-bottom:1px solid #3e6892; position:relative; margin:0;}
 .line h2 span { background-color: white; position: relative; top: 0; padding: 0 10px;}
+////////////// Item carousel
+.corousel-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  text-shadow: 1px 1px 1px #000;
+  line-height: 1.3;
+  color: #fff;
+  span {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+    &:not(:first-child) {
+      margin-left: 15px;
+    }
+    &:not(:last-child):after {
+      position: absolute;
+      content: '|';
+      font-size: 16px;
+      margin: 0 10px;
+    }
+  }
+  a > {
+    color: #fff;
+  }
+}
 
 
+.Mosaico-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  .Mosaico-link {
+    border-bottom: 0;
+  }
+}
 
-// @media (max-width: 768px) {
-//   .Mosaico-banda:first-child,
-//   .Mosaico-banda:last-child {
-//     display: none;
-//   }
-
-//   .Mosaico-painel {
-//     width: ~"calc((100vw - 1140px) / 2)";
-//   }
-// }
-
-
-
-// // references
-// @import (reference) "vendors/references";
-
-// // utils
-// @import "utils/separators";
-// @import "utils/text";
-
-// // base
-// @import "base/typography";
-
-// // tweaks
-// @import "tweaks/styles";
-
-// // componentes
-// @import "components/dropdown-menu";
-// @import "components/acessibilidade";
-// @import "components/apex";
-// @import "components/label";
-// @import "components/glyphicon";
-// @import "components/flag";
-// @import "components/stack";
-// @import "components/circle";
-// @import "components/fa-ul";
-// @import "components/navs";
-// @import "components/socialstamp";
-// //@import "components/icons";
-
-// // layout
-
-// @import "layout/boxing";
-
-// // terceiros
-// @import "~Yamm/yamm/yamm";
-// @import "~deaaz/app/less/az";
-
-// .Arrange--wrap {
-//   flex-wrap: wrap;
-// }
-// .link-white > {
-//   color:#f1f1f1;
-//   &:hover {
-//     color:#fff;
-//   }
-// }
-// .link-gray >{
-//   color:#333;
-//   &:hover {
-//     .circle--cut,.circle--gray,.circle--grayless,.circle--white {
-//       background: #27425c !important;
-//       color: #fff;
-//     }
-//   }
-// }
-// //////////////////////////// Caption Degrade
-// .Caption--gradient {
-//   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 74%,rgba(0,0,0,0.65) 100%) !important;
-// }
-// .nano {
-//   height: 260px;
-// }
-
-
-// @media (max-width: @screen-xs-max) {
-//   .circle-absolute {
-//     position: inherit;
-//   }
-// }
-
-
-
-
-
+.Mosaico-gallery a {
+  flex-grow: 1;
+  flex-basis: 125px;
+  max-width: 200px;
+  margin: 5px;
+}
+.Mosaico-gallery img {
+  height: 100%;
+  width: 100%;
+}
+//////// dados visualizador
+.btn-expand {
+  opacity: 0.5;
+  background-color: #fff;
+  border: 1px solid #666;
+  padding: 15px 19px;
+  color: #333;
+  z-index: 10;
+  transition: opacity 1s ease-in-out;
+  &:hover {
+    text-decoration: none;
+    transition: none;
+    opacity: 0.7;
+    zoom: 1;
+    filter: alpha(opacity=50);
+  }
+}
+.btn-position {
+  position: absolute;
+  right: 15px;
+}

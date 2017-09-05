@@ -1,0 +1,69 @@
+extends /design.shell/src/layout
+
+block stylesheets
+  link(rel="stylesheet" href="styles/vendors.css")
+  link(rel="stylesheet" href="styles/main.css")
+
+block portaltopo
+
+  .container
+    include pug/portaltopo
+
+block navglobal
+  include pug/partials/navglobal
+
+include pug/partials/mixins
+
+block content
+  .container
+    .row
+      .col-md-3
+        aside.l-box.milli(class='+cut')
+          .Flag.Apex--default
+            .Flag-figure
+              .epsilon
+                .glyphicon.glyphicon-equalizer
+            .Flag-body.delta
+              | Filtros
+          form
+            .form-group
+              label(for='tirada') Tirada na data
+              input#tirada.form-control
+            .form-group
+              label(for='senador') Senador
+              select#partido.form-control
+                option Partido
+                option a
+                option b
+                option c
+              select#estado.form-control
+                option Estado
+                option a
+                option b
+                option c
+            .form-group
+              label(for='AtividadeLegislativa') Atividade Legislativa
+              +checkbox('Plenário')
+              +checkbox('Projetos e Matérias')
+              +checkbox('Comissões')
+            button.btn.btn-primary(type='submit') Pesquisar
+
+      .col-md-9
+        .row
+          .col-md-12.u-spacer--xl
+            .Apex--dotted
+              span Resultados Encontrados para: &nbsp;
+                strong "Plenários"
+              span.pull-right 63.268 resultados
+          .col-md-12
+            .Mosaico-gallery
+              - for (var i = 0; i < 60; i++) {
+              +gallery
+              - }
+
+
+
+
+  script(src="//code.jquery.com/jquery-3.1.1.min.js")
+  script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+  script(src="js/main.js")

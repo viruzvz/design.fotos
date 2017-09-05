@@ -1,0 +1,46 @@
+extends /design.shell/src/layout
+
+block stylesheets
+  link(rel="stylesheet" href="styles/vendors.css")
+  link(rel="stylesheet" href="styles/main.css")
+
+block portaltopo
+
+  .container
+    include pug/portaltopo
+
+block navglobal
+  include pug/partials/navglobal
+
+include pug/partials/mixins
+
+block content
+  .container
+    .row
+      .col-md-12.Segments.u-spacer--xl
+        .Apex.Apex--default.delta.u-spacer--lg Mãos que Falam
+      .col-md-12
+        .row.u-spacer--xl
+          - for (var i = 0; i < 3; i++) {
+            .col-md-4.u-spacer
+              +thumbs
+            - }
+      .col-md-12.Segments.u-spacer--xl
+        .Apex.Apex--default.delta.u-spacer--lg Presidentes do Senado
+      .col-md-12
+        .row.u-spacer--xl
+          - for (var i = 0; i < 3; i++) {
+            .col-md-4.u-spacer
+              +thumbs
+            - }
+      .col-md-12.Segments.u-spacer--xl
+        .Apex.Apex--default.delta.u-spacer--lg Manifestações
+      .col-md-12
+        .row.u-spacer--xl
+          - for (var i = 0; i < 3; i++) {
+            .col-md-4.u-spacer
+              +thumbs
+            - }
+  script(src="//code.jquery.com/jquery-3.1.1.min.js")
+  script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+  script(src="js/main.js")

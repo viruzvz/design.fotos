@@ -1,7 +1,15 @@
 var $ = require('jquery')
-var az = require('deaaz')
-var data = require('./data.yaml')
+var flatpickr = require('flatpickr')
+var ekkolightbox = require('ekko-lightbox')
+const Portuguese = require("flatpickr/dist/l10n/pt.js").pt;
+flatpickr("#tirada", {
+  dateFormat: 'd/m/Y',
+  locale: Portuguese,
+  mode: 'range',
+}
+);
 
-$(function () {
-  az(data)
-})
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+});

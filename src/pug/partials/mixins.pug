@@ -1,40 +1,66 @@
 mixin thumbs(text, css)
-  .col-md-2.u-spacer--lg
-    .Mosaico-link
-      a(href='https://static.pexels.com/photos/402023/pexels-photo-402023.jpeg')
-        img.img-responsive(src='https://static.pexels.com/photos/402023/pexels-photo-402023.jpeg', alt='One')
-        .overlay
-          .text
-            span.glyphicon.glyphicon-zoom-in
+  .Mosaico-link
+    a(href='visualizador.html')
+      - var seed = Math.random()
+      img.img-responsive(src='https://unsplash.it/800/800?random&seed=' + seed , alt='One')
+      .overlay
+        .text
+          span.glyphicon.glyphicon-zoom-in
 mixin mosaico()
-  a.Mosaico-link(href='#').Embed.Embed--1by1
+  a.Mosaico-link(href='visualizador.html').Embed.Embed--1by1
     - var seed = Math.random()
     img(src='https://unsplash.it/300/300?random&seed=' + seed)
     .overlay
       .text
         span.glyphicon.glyphicon-zoom-in
 
-mixin carousel(id, img, idc)
+mixin gallery
+  a.Mosaico-link(href="visualizador.html")
+    - var seed = Math.random()
+    img(src='https://unsplash.it/300/300?random&seed=' + seed, class='img-fluid')
+    .overlay
+      .text
+        span.glyphicon.glyphicon-zoom-in
+mixin checkbox(text)
+  .checkbox
+    label
+      input(type='checkbox')
+      =text
+
+
+mixin carousel(id, img, idc, text, flag, autor)
   .carousel.slide(data-ride='carousel', id=id)
+    if flag
+      // Cabeçalho
+      .corousel-header.l-box.hidden-xs
+        span.eta: a(href='#') Imagens do Senado
+        span: a(href='#') Banco de imagens ›
+        span: a(href='#') Galera fotográficas ›
     // Indicators
     ol.carousel-indicators
-      li.active(data-target=id, data-slide-to='0')
-      li(data-target=id, data-slide-to='1')
-      li(data-target=id, data-slide-to='2')
+      li.active(data-target=idc, data-slide-to='0')
+      li(data-target=idc, data-slide-to='1')
+      li(data-target=idc, data-slide-to='2')
     // Wrapper for slides
     .carousel-inner(role='listbox')
+      mixin item-carousel
+        .Embed.Embed--5by2
+          img(src=img, alt=text)
+        .l-box.Caption.Caption--film
+          .zeta
+            =text
+          if autor
+            .text-right
+              small
+                span.glyphicon.glyphicon-camera &nbsp;
+                | Fotografo/Agencia Senado
       .item.active
-        img(src=img, alt='...')
-        .carousel-caption
-          | ...
+        +item-carousel
       .item
-        img(src=img, alt='...')
-        .carousel-caption
-          | ...
+        +item-carousel
       .item
-        img(src=img, alt='...')
-        .carousel-caption
-          | ...
+        +item-carousel
+
     // Controls
     a.left.carousel-control(href=idc, role='button', data-slide='prev')
       span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
@@ -42,3 +68,5 @@ mixin carousel(id, img, idc)
     a.right.carousel-control(href=idc, role='button', data-slide='next')
       span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
       span.sr-only Next
+
+

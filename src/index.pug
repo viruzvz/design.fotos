@@ -31,7 +31,7 @@ block content
         //- - var seed = Math.random()
         //- img(src='https://unsplash.it/5000/2000?random&seed=' + seed)
         - for (var i = 0; i < 40; i++) {
-          .Ladrilho
+          .Mosaico-square
         - }
       .Mosaico-banda
         - for (var i = 0; i < 4; i++) {
@@ -44,47 +44,50 @@ block content
         - }
   .container
     .row
-      .col-md-12.u-spacer--lg
-        #imaginary_container
-          .input-group.stylish-input-group
-            input.form-control(type='text', placeholder='Buscar abaixo')
-            span.input-group-addon
-              button(type='submit')
-                span.glyphicon.glyphicon-search
-      .col-md-12.u-spacer--xl
-        span.line
-          h2
-            span.zeta Galeria
-      .col-md-12.u-spacer--xl
+      .col-md-12
+        #imaginary_container.u-spacer--lg.l-box--extra(class='+grayless')
+          form
+            .Arrange
+              .Arrange-fill
+                input.form-control(type='text', placeholder='insira palavra(s)-chave')
+              .Arrange-fit
+                a.btn.btn-success(href='resultados.html') Buscar
+      .col-md-12.Segments.u-spacer--xl
+        .Apex.Apex--default.delta.u-spacer--lg Galeria
+      .col-md-12
         .row.u-spacer--xl
           - for (var i = 0; i < 6; i++) {
-            +thumbs
+            .col-md-2.u-spacer
+              +thumbs
             - }
 
         .row.u-spacer--xl
           - for (var i = 0; i < 6; i++) {
-            +thumbs
+            .col-md-2.u-spacer
+              +thumbs
             - }
         .row
           - for (var i = 0; i < 6; i++) {
-            +thumbs
+            .col-md-2.u-spacer
+              +thumbs
             - }
-      .col-md-12.u-spacer--xl
-        span.line
-          h2
-            span.zeta Exposições
-      .col-md-12.u-spacer--xl
+      .col-md-12.Segments.u-spacer--xl
+        .Apex.Apex--default.delta.u-spacer--lg Exposição
+      .col-md-12
         .row.u-spacer--xl
           - for (var i = 0; i < 6; i++) {
-            +thumbs
+            .col-md-2.u-spacer
+              +thumbs
             - }
         .row.u-spacer--xl
           - for (var i = 0; i < 6; i++) {
-            +thumbs
+            .col-md-2.u-spacer
+              +thumbs
             - }
         .row
           - for (var i = 0; i < 6; i++) {
-            +thumbs
+            .col-md-2.u-spacer
+              +thumbs
             - }
   script(src="//code.jquery.com/jquery-3.1.1.min.js")
   script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")

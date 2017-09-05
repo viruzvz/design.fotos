@@ -19,6 +19,8 @@
     "deaaz": "fabianonunes/deaaz#0.0.6",
     "design.noticias": "git+ssh://git@www12dsv.senado.leg.br/design/design-noticias.git#develop",
     "design.shell": "fabianonunes/design.shell#2.3.0",
+    "ekko-lightbox": "^5.2.0",
+    "flatpickr": "^3.0.7",
     "flexboxgrid": "^6.3.1",
     "jquery": "^2.1.4",
     "senado.css": "agenciasenado/senado.css#develop",

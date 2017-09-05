@@ -17,9 +17,16 @@ include pug/partials/mixins
 block content
   .container
     .row
+      .col-md-12.u-spacer--xl
+        +carousel('vitrine','https://unsplash.it/1200/800?random', '#vitrine','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',true, true)
+      .col-md-12.Segments.u-spacer--xl
+        .Apex.Apex--default.delta.u-spacer--lg Outras Vitrines
       .col-md-12
-        +carousel('vitrine','../assets/slider.jpg', '#vitrine')
-
+        .row.u-spacer--xl
+          - for (var i = 0; i < 6; i++) {
+            .col-md-2.u-spacer--lg
+              +thumbs
+            - }
   script(src="//code.jquery.com/jquery-3.1.1.min.js")
   script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
   script(src="js/main.js")
