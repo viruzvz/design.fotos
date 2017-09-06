@@ -14,10 +14,9 @@ mixin mosaico()
       .text
         span.glyphicon.glyphicon-zoom-in
 
-mixin gallery
+mixin gallery(end)
   a.Mosaico-link(href="visualizador.html")
-    - var seed = Math.random()
-    img(src='https://unsplash.it/300/300?random&seed=' + seed, class='img-fluid')
+    img(src=end, class='img-fluid')
     .overlay
       .text
         span.glyphicon.glyphicon-zoom-in

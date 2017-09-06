@@ -56,14 +56,29 @@ block content
                 strong "Plenários"
               span.pull-right 63.268 resultados
           .col-md-12
-            .Mosaico-gallery
-              - for (var i = 0; i < 60; i++) {
-              +gallery
-              - }
-
-
+            #mygallery
+              +gallery('https://unsplash.it/800/800?randon')
+              +gallery('https://unsplash.it/1280/768?randon')
+              +gallery('https://unsplash.it/900/600?randon')
+              +gallery('https://unsplash.it/1500/1200?randon')
+              +gallery('https://unsplash.it/1780/1240?randon')
+              +gallery('https://unsplash.it/2500/600?randon')
+              +gallery('https://unsplash.it/1500/900?randon')
+              +gallery('https://unsplash.it/600/300?randon')
+              +gallery('https://unsplash.it/1600/1600?randon')
+              +gallery('https://unsplash.it/300/300?randon')
+              +gallery('https://unsplash.it/500/500?randon')
+              +gallery('https://unsplash.it/2600/1200?randon')
+              +gallery('https://unsplash.it/3200/1600?randon')
+              +gallery('https://unsplash.it/800/400?randon')
+              +gallery('https://unsplash.it/800/700?randon')
+              +gallery('https://unsplash.it/1800/740?randon')
+              +gallery('https://unsplash.it/1024/768?randon')
+              +gallery('https://unsplash.it/1280/900?randon')
+              +gallery('https://unsplash.it/1480/740?randon')
 
 
   script(src="//code.jquery.com/jquery-3.1.1.min.js")
   script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
   script(src="js/main.js")
+  script(src="js/jquery.justifiedGallery.js")
