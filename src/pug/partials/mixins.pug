@@ -7,12 +7,13 @@ mixin thumbs(text, css)
         .text
           span.glyphicon.glyphicon-zoom-in
 mixin mosaico()
-  a.Mosaico-link(href='visualizador.html').Embed.Embed--1by1
-    - var seed = Math.random()
-    img(src='https://unsplash.it/300/300?random&seed=' + seed)
-    .overlay
-      .text
-        span.glyphicon.glyphicon-zoom-in
+  .Mosaico-Embed
+    a.Mosaico-link(href='visualizador.html').Embed.Embed--1by1
+      - var seed = Math.random()
+      img(src='https://unsplash.it/300/300?random&seed=' + seed)
+      .overlay
+        .text
+          span.glyphicon.glyphicon-zoom-in
 
 mixin gallery(end)
   a.Mosaico-link(href="visualizador.html")
@@ -25,8 +26,6 @@ mixin checkbox(text)
     label
       input(type='checkbox')
       =text
-
-
 mixin carousel(id, img, idc, text, flag, autor)
   .carousel.slide(data-ride='carousel', id=id)
     if flag
@@ -69,3 +68,70 @@ mixin carousel(id, img, idc, text, flag, autor)
       span.sr-only Next
 
 
+mixin modal(id, header)
+  .modal.fade(id=id, tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+    .modal-dialog(role='document')
+      .modal-content
+        if header
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+            h4#myModalLabel.modal-title Modal title
+        .modal-body
+          block
+        .modal-footer
+          button.btn.btn-default(type='button', data-dismiss='modal') Fechar
+        //  button.btn.btn-primary(type='button') Save changes
+
+mixin buscar
+  .Flag.Apex--default
+    .Flag-figure
+      .epsilon
+        span.glyphicon.glyphicon-search
+    .Flag-body.delta
+      | Buscar
+  form
+    .Arrange
+      .Arrange-fill
+        input.form-control(type='text', placeholder='insira palavra(s)-chave')
+      .Arrange-fit
+        a.btn.btn-success(href='resultados.html') Buscar
+mixin filtros
+  .Flag.Apex--default
+    .Flag-figure
+      .epsilon
+        span.glyphicon.glyphicon-equalizer
+    .Flag-body.delta
+      | Filtros
+  form
+    .form-group
+      label(for='tirada') Tirada na data
+      input#tirada.form-control(placeholder='DD/MM/AA')
+    .form-group
+      label(for='senador') Senador
+      .form-group
+        select#nome.form-control
+          option Nome
+          option a
+          option b
+          option c
+      .form-group
+        select#partido.form-control
+          option Partido
+          option a
+          option b
+          option c
+      .form-group
+        select#estado.form-control
+          option Estado
+          option a
+          option b
+          option c
+    .form-group
+      label(for='AtividadeLegislativa') Atividade Legislativa
+      +checkbox('Plenário')
+      +checkbox('Projetos e Matérias')
+      +checkbox('Comissões')
+      label(for='Vitrini') Senado Notícias
+      +checkbox('Vitrini')
+    button.btn.btn-primary(type='submit') Filtrar

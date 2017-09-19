@@ -5,6 +5,7 @@ require('ekko-lightbox')
 require('justifiedGallery/dist/js/jquery.justifiedGallery')
 require('bootstrap')
 
+
 const Portuguese = require('flatpickr/dist/l10n/pt.js').pt
 
 $(document).on('click', '[data-toggle="lightbox"]', function (event) {
@@ -13,11 +14,13 @@ $(document).on('click', '[data-toggle="lightbox"]', function (event) {
 })
 
 $(document).ready(function () {
-  $('#mygallery').justifiedGallery()
-
+  $('#mygallery').justifiedGallery({
+    margins: 3
+  })
   flatpickr('#tirada', {
     dateFormat: 'd/m/Y',
     locale: Portuguese,
     mode: 'range'
   })
+  $('.mCustomScrollbar').mCustomScrollbar({axis: 'x'})
 })

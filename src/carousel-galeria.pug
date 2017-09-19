@@ -1,0 +1,90 @@
+extends /design.shell/src/layout
+
+block stylesheets
+  link(rel="stylesheet" href="styles/vendors.css")
+  link(rel="stylesheet" href="styles/main.css")
+
+block portaltopo
+
+  .container
+    include pug/portaltopo
+
+block navglobal
+  include pug/partials/navglobal
+
+include pug/partials/mixins
+
+block content
+  .full-container.u-spacer--xl.l-box--screen(class='+graydeep')
+    .container.u-posRelative
+      .row
+        .col-md-12
+          #carousel-custom.carousel.slide(data-ride='carousel')
+            .carousel-outer
+              // Wrapper for slides
+              .carousel-inner
+                .item
+                  .Embed.Embed--5by2
+                    img(src='http://placehold.it/1280x800&text=slide1', alt='')
+                .item
+                  .Embed.Embed--5by2
+                    img(src='http://placehold.it/1280x800&text=slide2', alt='')
+                .item
+                  .Embed.Embed--5by2
+                    img(src='http://placehold.it/1280x800&text=slide3', alt='')
+                .item
+                  .Embed.Embed--5by2
+                    img(src='http://placehold.it/1280x800&text=slide4', alt='')
+                .item
+                  .Embed.Embed--5by2
+                    img(src='http://placehold.it/1280x800&text=slide5', alt='')
+                .item
+                  .Embed.Embed--5by2
+                    img(src='http://placehold.it/1280x800&text=slide6', alt='')
+                .item
+                  .Embed.Embed--5by2
+                    img(src='http://placehold.it/1280x800&text=slide7', alt='')
+                .item
+                  .Embed.Embed--5by2
+                    img(src='http://placehold.it/1280x800&text=slide8', alt='')
+                .item.active
+                  .Embed.Embed--5by2
+                    img(src='http://placehold.it/1280x800&text=slide9', alt='')
+              // Controls
+              a.left.carousel-control(href='#carousel-custom', data-slide='prev')
+                span.glyphicon.glyphicon-chevron-left
+              a.right.carousel-control(href='#carousel-custom', data-slide='next')
+                span.glyphicon.glyphicon-chevron-right
+            // Indicators
+            .carousel-wrap
+              ol.carousel-indicators.mCustomScrollbar
+                li(data-target='#carousel-custom', data-slide-to='0')
+                  img(src='http://placehold.it/100x50&text=slide1', alt='')
+                li(data-target='#carousel-custom', data-slide-to='1')
+                  img(src='http://placehold.it/100x50&text=slide2', alt='')
+                li(data-target='#carousel-custom', data-slide-to='2')
+                  img(src='http://placehold.it/100x50&text=slide3', alt='')
+                li(data-target='#carousel-custom', data-slide-to='3')
+                  img(src='http://placehold.it/100x50&text=slide4', alt='')
+                li(data-target='#carousel-custom', data-slide-to='4')
+                  img(src='http://placehold.it/100x50&text=slide5', alt='')
+                li(data-target='#carousel-custom', data-slide-to='5')
+                  img(src='http://placehold.it/100x50&text=slide6', alt='')
+                li(data-target='#carousel-custom', data-slide-to='6')
+                  img(src='http://placehold.it/100x50&text=slide7', alt='')
+                li(data-target='#carousel-custom', data-slide-to='7')
+                  img(src='http://placehold.it/100x50&text=slide8', alt='')
+                li.active(data-target='#carousel-custom', data-slide-to='8')
+                  img(src='http://placehold.it/100x50&text=slide9', alt='')
+  .container
+    .row
+      .col-md-12.Segments.u-spacer--xl
+        .Apex.Apex--default.delta.u-spacer--lg Outras Vitrines
+      .col-md-12
+        .row.u-spacer--xl
+          - for (var i = 0; i < 6; i++) {
+            .col-md-2.u-spacer--lg
+              +thumbs
+            - }
+  script(src="//code.jquery.com/jquery-3.1.1.min.js")
+  script(src="js/main.js")

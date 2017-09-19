@@ -19,13 +19,6 @@
   position: relative;
   min-width: @banda-width;
 }
-.l-box--extra {
-  padding: 25px;
-}
-.l-box--screen {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
 .Mask {
   position: absolute;
   background: linear-gradient(to right, #fff 0%, #fff 20%, transparent 100%);
@@ -60,7 +53,7 @@
 .Mosaico-banda, .Mosaico-square {
   border-right: 3px solid #fff;
 }
-.Mosaico-link, .Mosaico-square {
+.Mosaico-square {
   border-bottom: 3px solid #fff;
 }
 .Mosaico--grid {
@@ -83,13 +76,43 @@
 .Mosaico-link:hover .overlay {
   opacity: 0.5;
 }
-
+.Mosaico-Embed {
+  height: 25%;
+}
+.Mosaico-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  .Mosaico-link {
+    border-bottom: 0;
+  }
+}
+.Mosaico-gallery a {
+  flex-grow: 1;
+  flex-basis: 125px;
+  max-width: 200px;
+  margin: 5px;
+}
+.Mosaico-gallery img {
+  height: 100%;
+  width: 100%;
+}
+////////////////// extensão componentes senado-css
+.l-box--extra {
+  padding: 25px;
+}
+.l-box--screen {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 .Embed--1by1 {
   padding-bottom: 100%;
 }
 .Embed--5by2 {
   padding-bottom: 40%;
 }
+///////////////// estilo hover das imagens em gerais.
 .overlay {
   position: absolute;
   top: 0;
@@ -111,37 +134,6 @@
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-.Apex--dotted {
-  border-bottom: 1px dotted #ccc;
-}
-.Square {
-  justify-content: center;
-  padding: 0;
-  height: 2.2em;
-  width: 2.2em;
-  text-align: center;
-  line-height: 1.2;
-  align-items: center;
-  flex-direction: column;
-  display: inline-flex;
-}
-////////////// Busca da galeria
-.stylish-input-group .input-group-addon{
-    background: white !important;
-}
-.stylish-input-group .form-control{
-  border-right:0;
-  box-shadow:0 0 0;
-  border-color:#ccc;
-}
-.stylish-input-group button{
-    border:0;
-    background:transparent;
-}
-////////////// Borda texto borda igual fildset com borda e titulo.
-.linear-gradient{display:block; margin:0 25px}
-.line h2{font-size:15px; text-align:center; border-bottom:1px solid #3e6892; position:relative; margin:0;}
-.line h2 span { background-color: white; position: relative; top: 0; padding: 0 10px;}
 ////////////// Item carousel
 .corousel-header {
   position: absolute;
@@ -169,28 +161,6 @@
     color: #fff;
   }
 }
-
-
-.Mosaico-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: space-between;
-  .Mosaico-link {
-    border-bottom: 0;
-  }
-}
-
-.Mosaico-gallery a {
-  flex-grow: 1;
-  flex-basis: 125px;
-  max-width: 200px;
-  margin: 5px;
-}
-.Mosaico-gallery img {
-  height: 100%;
-  width: 100%;
-}
 //////// dados visualizador
 .btn-expand {
   opacity: 0.5;
@@ -211,4 +181,84 @@
 .btn-position {
   position: absolute;
   right: 15px;
+}
+
+///////////////////////////////////// responsive bar
+.nav-bar {
+  float: right;
+  width: 100%;
+}
+.nav-bar--sty {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  box-shadow: 0px -2px 3px 0px rgba(51,51,51,1);
+}
+.nav-bar--link {
+  float: right;
+  padding: 5px 16px;
+  border-left:1px solid #ccc;
+  position: relative;
+  &:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content:'';
+    height: 100%;
+    border-left:1px solid #fff;
+  }
+}
+#carousel-custom {
+
+}
+.carousel-wrap {
+  position: relative;
+  margin: 15px auto;
+  max-width: 600px;
+}
+#carousel-custom .carousel-indicators {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: static;
+    white-space: nowrap;
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 20px;
+      z-index: 99;
+    }
+    &:after {
+      right: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(51,51,51,0.65) 100%);
+    }
+    &:before {
+      left: 0;
+      background: linear-gradient(to right, rgba(51,51,51,0.65) 0%,rgba(0,0,0,0) 100%);
+    }
+    &:hover{
+      overflow: auto;
+    }
+}
+#carousel-custom .carousel-indicators li {
+    background-color: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    display: inline-block;
+    height: auto;
+    margin: 0 !important;
+    width: auto;
+}
+#carousel-custom .carousel-indicators li img {
+    display: block;
+    opacity: 0.5;
+}
+#carousel-custom .carousel-indicators li.active img {
+    opacity: 1;
+}
+#carousel-custom .carousel-indicators li:hover img {
+    opacity: 0.75;
+}
+#carousel-custom .carousel-outer {
+    position: relative;
 }
