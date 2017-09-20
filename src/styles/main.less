@@ -161,27 +161,7 @@
     color: #fff;
   }
 }
-//////// dados visualizador
-.btn-expand {
-  opacity: 0.5;
-  background-color: #fff;
-  border: 1px solid #666;
-  padding: 15px 19px;
-  color: #333;
-  z-index: 10;
-  transition: opacity 1s ease-in-out;
-  &:hover {
-    text-decoration: none;
-    transition: none;
-    opacity: 0.7;
-    zoom: 1;
-    filter: alpha(opacity=50);
-  }
-}
-.btn-position {
-  position: absolute;
-  right: 15px;
-}
+
 
 ///////////////////////////////////// responsive bar
 .nav-bar {
@@ -208,19 +188,37 @@
   }
 }
 #carousel-custom {
-
-}
-.carousel-wrap {
-  position: relative;
-  margin: 15px auto;
-  max-width: 600px;
-}
-#carousel-custom .carousel-indicators {
+  .carousel-outer {
+      position: relative;
+  }
+  .carousel-control {
+    width: 5%;
+  }
+  .carousel-indicators {
     width: 100%;
     margin: auto;
-    overflow: hidden;
     position: static;
     white-space: nowrap;
+    li {
+      background-color: transparent;
+      border-radius: 0;
+      display: inline-block;
+      height: auto;
+      margin: 0 !important;
+      width: auto;
+      img {
+        display: block;
+        opacity: 0.5;
+      }
+    }
+    li.active {
+      img {
+        opacity: 1;
+      }
+    }
+    &:hover img {
+    opacity: 0.75;
+    }
     &:after, &:before {
       content: '';
       position: absolute;
@@ -236,29 +234,34 @@
       left: 0;
       background: linear-gradient(to right, rgba(51,51,51,0.65) 0%,rgba(0,0,0,0) 100%);
     }
-    &:hover{
-      overflow: auto;
+  }
+}
+.carousel-wrap {
+  position: relative;
+  margin: 30px auto 0 auto;
+  max-width: 600px;
+}
+.carousel-buttons {
+  max-width: 600px;
+  position: relative;
+  margin: 30px auto 0 auto;
+  text-align: center;
+  > a {
+    margin: 0 15px;
+    color: #999;
+    font-size: 1.2em;
+    &:hover {
+      color: #fff;
     }
-}
-#carousel-custom .carousel-indicators li {
-    background-color: transparent;
-    -webkit-border-radius: 0;
-    border-radius: 0;
-    display: inline-block;
-    height: auto;
-    margin: 0 !important;
-    width: auto;
-}
-#carousel-custom .carousel-indicators li img {
-    display: block;
-    opacity: 0.5;
-}
-#carousel-custom .carousel-indicators li.active img {
-    opacity: 1;
-}
-#carousel-custom .carousel-indicators li:hover img {
-    opacity: 0.75;
-}
-#carousel-custom .carousel-outer {
-    position: relative;
+  }
+  .arrow-left {
+    position: absolute;
+    left: -45px;
+    top: 15px;
+  }
+  .arrow-right {
+    position: absolute;
+    right: -45px;
+    top: 15px;
+  }
 }
