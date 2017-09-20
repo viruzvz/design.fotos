@@ -18,31 +18,11 @@ block content
   .full-container.u-spacer--xl.l-box--screen(class='+graydeep')
     .container.u-posRelative
       .row
-        .col-md-12
-          .Embed.Embed--5by2
-            img.img-responsive.img-fluid(src='https://unsplash.it/1280/768?randon')
-          +carousel-buttons
-  .container
-    .row.u-spacer--xl
-      .col-md-4.u-spacer
-        p.zeta Plenário do Senado
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven
-        dl
-          dt Foto:
-          dd João da Silva
-          dt Local:
-          dd Agência Senado
-      .col-md-4.u-spacer
-        p
-          span.glyphicon.glyphicon-copyright-mark &nbsp;
-          | Alguns direitos reservados
-        p
-          spam.glyphicon.glyphicon-calendar &nbsp;
-          i Tirada em 31 de março de 2017
-        button.btn.btn-lg.btn-success Baixar
-      .col-md-4
-        .row
-          .col-md-12.u-spacer--lg
+        .col-md-9
+          .Embed.Embed--16by9
+            img.img-responsive.img-fluid(src='https://unsplash.it/800/600?randon')
+        .col-md-3
+          .l-box(class='+grayless')
             .row
               .col-md-4
                 img.img-responsive(src='assets/flickr/NikonD100.png', alt='NikonD100')
@@ -50,7 +30,6 @@ block content
                 .l-letter
                   p.eta: a(href='#' role='camera name') Nikon D5100
                   small 18-105mm f/3.5-5.6
-          .col-md-6
             ul.list-unstyled
               li
                 img(src='assets/flickr/aperture.svg')
@@ -61,7 +40,6 @@ block content
               li
                 img(src='assets/flickr/flash.svg')
                 | &nbsp; Flash (auto, fired)
-          .col-md-6
             ul.list-unstyled
               li
                 img(src='assets/flickr/focal-length.svg')
@@ -72,6 +50,25 @@ block content
               li
                 img(src='assets/flickr/showEXIF.svg')
                 a(href='#') &nbsp; Show EXIF
+            p
+              span.glyphicon.glyphicon-copyright-mark &nbsp;
+              | Alguns direitos reservados
+            p
+              spam.glyphicon.glyphicon-calendar &nbsp;
+              i Tirada em 31 de março de 2017
+            button.btn.btn-lg.btn-success Baixar
+            +carousel-buttons
+  .container
+    .row.u-spacer--xl
+      .col-md-12.u-spacer
+        p.zeta Plenário do Senado
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven
+        dl
+          dt Foto:
+          dd João da Silva
+          dt Local:
+          dd Agência Senado
+
     .row.u-spacer--xl
       .col-md-12.Segments
         .Apex.Apex--default.delta.u-spacer--lg Fotos Semelhantes
