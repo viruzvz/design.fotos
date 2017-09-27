@@ -23,36 +23,23 @@ block content
             .carousel-outer
               // Wrapper for slides
               .carousel-inner
-                .item.active
-                  .Embed.Embed--5by2
-                    img(src='http://placehold.it/1280x800&text=slide0', alt='')
-                .item
-                  .Embed.Embed--5by2
-                    img(src='http://placehold.it/1280x800&text=slide1', alt='')
-                .item
-                  .Embed.Embed--5by2
-                    img(src='http://placehold.it/1280x800&text=slide2', alt='')
-                .item
-                  .Embed.Embed--5by2
-                    img(src='http://placehold.it/1280x800&text=slide3', alt='')
-                .item
-                  .Embed.Embed--5by2
-                    img(src='http://placehold.it/1280x800&text=slide4', alt='')
-                .item
-                  .Embed.Embed--5by2
-                    img(src='http://placehold.it/1280x800&text=slide5', alt='')
-                .item
-                  .Embed.Embed--5by2
-                    img(src='http://placehold.it/1280x800&text=slide6', alt='')
-                .item
-                  .Embed.Embed--5by2
-                    img(src='http://placehold.it/1280x800&text=slide7', alt='')
-                .item
-                  .Embed.Embed--5by2
-                    img(src='http://placehold.it/1280x800&text=slide8', alt='')
-                .item
-                  .Embed.Embed--5by2
-                    img(src='http://placehold.it/1280x800&text=slide9', alt='')
+                mixin item(active, embed, src, clss)
+                  .item(class=active)
+                    div(class=embed)
+                      img(src=src, alt='', class=clss)
+                +item('active ', 'noEmbed', 'https://unsplash.it/1280x3800?image=0&text=slide0','')
+                +item('', 'noEmbed', 'https://unsplash.it/800x800?image=1&text=slide1','')
+                +item('', 'noEmbed', 'https://unsplash.it/500x800?image=2&text=slide2','')
+                +item('', 'noEmbed', 'https://unsplash.it/900x400?image=3&text=slide3','')
+                +item('', 'noEmbed', 'https://unsplash.it/780x340?image=4&text=slide4','')
+                +item('', 'noEmbed', 'https://unsplash.it/800x600?image=5&text=slide5','')
+                +item('', 'noEmbed', 'https://unsplash.it/1240x780?image=6&text=slide6','')
+                +item('', 'noEmbed', 'https://unsplash.it/1240x800?image=7&text=slide7','')
+                +item('', 'noEmbed', 'https://unsplash.it/900x500?image=8&text=slide8','')
+                +item('', 'noEmbed', 'https://unsplash.it/400x800?image=9&text=slide9','')
+                +item('', 'noEmbed', 'https://unsplash.it/400x800?image=10&text=slide10','')
+                +item('', 'noEmbed', 'https://unsplash.it/400x800?image=11&text=slide11','')
+                +item('', 'noEmbed', 'https://unsplash.it/400x800?image=12&text=slide12','')
               // Controls
               a.left.carousel-control(href='#carousel-custom', data-slide='prev')
                 span.glyphicon.glyphicon-chevron-left
@@ -66,26 +53,22 @@ block content
                 span.glyphicon.glyphicon-chevron-right
             .carousel-wrap(data-simplebar)
               ol.carousel-indicators
-                li.active(data-target='#carousel-custom', data-slide-to='0')
-                  img(src='http://placehold.it/100x50&text=slide0', alt='')
-                li(data-target='#carousel-custom', data-slide-to='1')
-                  img(src='http://placehold.it/100x50&text=slide1', alt='')
-                li(data-target='#carousel-custom', data-slide-to='2')
-                  img(src='http://placehold.it/100x50&text=slide2', alt='')
-                li(data-target='#carousel-custom', data-slide-to='3')
-                  img(src='http://placehold.it/100x50&text=slide3', alt='')
-                li(data-target='#carousel-custom', data-slide-to='4')
-                  img(src='http://placehold.it/100x50&text=slide4', alt='')
-                li(data-target='#carousel-custom', data-slide-to='5')
-                  img(src='http://placehold.it/100x50&text=slide5', alt='')
-                li(data-target='#carousel-custom', data-slide-to='6')
-                  img(src='http://placehold.it/100x50&text=slide6', alt='')
-                li(data-target='#carousel-custom', data-slide-to='7')
-                  img(src='http://placehold.it/100x50&text=slide7', alt='')
-                li(data-target='#carousel-custom', data-slide-to='8')
-                  img(src='http://placehold.it/100x50&text=slide8', alt='')
-                li(data-target='#carousel-custom', data-slide-to='9')
-                  img(src='http://placehold.it/100x50&text=slide9', alt='')
+                mixin li(active, num, src)
+                  li(class=active, data-target='#carousel-custom', data-slide-to=num)
+                    img(src=src, alt='')
+                +li('active','0', 'https://unsplash.it/50x50?image=0&text=slide0')
+                +li('','1', 'https://unsplash.it/50x50?image=1&text=slide1')
+                +li('','2', 'https://unsplash.it/50x50?image=2&text=slide2')
+                +li('','3', 'https://unsplash.it/50x50?image=3&text=slide3')
+                +li('','4', 'https://unsplash.it/50x50?image=4&text=slide4')
+                +li('','5', 'https://unsplash.it/50x50?image=5&text=slide5')
+                +li('','6', 'https://unsplash.it/50x50?image=6&text=slide6')
+                +li('','7', 'https://unsplash.it/50x50?image=7&text=slide7')
+                +li('','8', 'https://unsplash.it/50x50?image=8&text=slide8')
+                +li('','9', 'https://unsplash.it/50x50?image=9&text=slide9')
+                +li('','10', 'https://unsplash.it/50x50?image=10&text=slide10')
+                +li('','11', 'https://unsplash.it/50x50?image=11&text=slide11')
+                +li('','12', 'https://unsplash.it/50x50?image=12&text=slide12')
             +carousel-buttons
   .container
     .row

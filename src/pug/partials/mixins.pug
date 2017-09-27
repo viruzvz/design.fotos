@@ -43,7 +43,7 @@ mixin carousel(id, img, idc, text, flag, autor)
     .carousel-inner(role='listbox')
       mixin item-carousel
         .Embed.Embed--5by2
-          img(src=img, alt=text)
+          img(src=img)
         .l-box.Caption.Caption--film
           .zeta
             =text
@@ -128,13 +128,11 @@ mixin filtros
           option b
           option c
     .form-group
-      label(for='AtividadeLegislativa') Atividade Legislativa
       +checkbox('Plenário')
       +checkbox('Projetos e Matérias')
       +checkbox('Comissões')
-      label(for='Vitrini') Senado Notícias
-      +checkbox('Vitrini')
-    button.btn.btn-primary(type='submit') Filtrar
+      +checkbox('Amostras')
+
 mixin carousel-buttons
   .carousel-buttons
     a(href='https://unsplash.it/1280/768.jpg?image=251', title='Full Screem' data-toggle="lightbox"  data-gallery="example-gallery")
