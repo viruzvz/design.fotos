@@ -42,14 +42,14 @@ mixin link(href, target)
     .Flag-body
       a(href=href target=target)
         block
-
-nav#s-menu.Nav--principal.navbar.navbar-default.navbar-collapse.collapse(role="navigation").yamm
-  ul.nav.navbar-nav.hide
-
-nav.Nav--secundaria.hidden-xs
-
-  ul.nav.navbar-nav.pull-right
+mixin ul-nav(clss)
+  ul.nav.navbar-nav(class=clss)
     li: a(href='resultados.html') Galeria
     li: a(href='exposicoes.html') Exposições
     li: a(href='#') Melhores
     li: a(href='vitrine.html') Vitrine
+nav#s-menu.Nav--principal.navbar.navbar-collapse.collapse(role="navigation")
+  +ul-nav('visible-xs')
+
+nav.Nav--secundaria.hidden-xs
+  +ul-nav('pull-right')

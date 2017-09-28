@@ -17,12 +17,12 @@ include pug/partials/mixins
 block content
   .Mosaico.u-spacer--xl
     .Mosaico-container
-      .Mosaico-banda
+      .Mosaico-banda.hidden-xs
         .Mask
         - for (var i = 0; i < 4; i++) {
         +mosaico
         - }
-      .Mosaico-banda
+      .Mosaico-banda.hidden-xs
         - for (var i = 0; i < 4; i++) {
         +mosaico
         - }
@@ -30,11 +30,11 @@ block content
         - for (var i = 0; i < 40; i++) {
           .Mosaico-square
         - }
-      .Mosaico-banda
+      .Mosaico-banda.hidden-xs
         - for (var i = 0; i < 4; i++) {
         +mosaico
         - }
-      .Mosaico-banda
+      .Mosaico-banda.hidden-xs
         .Mask.Mask--inverse
         - for (var i = 0; i < 4; i++) {
         +mosaico
@@ -42,7 +42,7 @@ block content
   .container
     .row
       .col-md-12
-        #imaginary_container.u-spacer--lg.l-box--extra(class='+grayless')
+        #imaginary_container.u-spacer--xl.l-box--extra(class='+grayless')
           form
             .Arrange
               .Arrange-fill
@@ -54,7 +54,7 @@ block content
       .col-md-12
         .row.u-spacer--xl
           - for (var i = 0; i < 6; i++) {
-            .col-md-2.u-spacer
+            .col-md-2.col-sm-4.col-xs-6.u-spacer--xl
               +thumbs
             - }
       .col-md-12.Segments.u-spacer--xl
@@ -62,7 +62,7 @@ block content
       .col-md-12
         .row.u-spacer--xl
           - for (var i = 0; i < 6; i++) {
-            .col-md-2.u-spacer
+            .col-md-2.col-sm-4.col-xs-6.u-spacer--xl
               +thumbs
             - }
       .col-md-12.Segments.u-spacer--xl
@@ -70,7 +70,7 @@ block content
       .col-md-12
         .row.u-spacer--xl
           - for (var i = 0; i < 6; i++) {
-            .col-md-2.u-spacer
+            .col-md-2.col-sm-4.col-xs-6.u-spacer--xl
               +thumbs
             - }
   script(src="//code.jquery.com/jquery-3.1.1.min.js")

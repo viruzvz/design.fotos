@@ -71,7 +71,7 @@ block content
                 | &nbsp; 3200
               li
                 img(src='assets/flickr/showEXIF.svg')
-                a(href='#') &nbsp; Show EXIF
+                a(href='#' data-toggle='modal', data-target='#EXIF') &nbsp; Show EXIF
     .row.u-spacer--xl
       .col-md-12.Segments
         .Apex.Apex--default.delta.u-spacer--lg Fotos Semelhantes
@@ -79,7 +79,7 @@ block content
       .col-md-12
         .row.u-spacer--xl
           - for (var i = 0; i < 6; i++) {
-            .col-md-2.u-spacer--lg
+            .col-md-2.col-xs-6.u-spacer--xl
               +thumbs
             - }
     .row.u-spacer--xl
@@ -91,6 +91,8 @@ block content
           - for (var i = 0; i < 50; i++) {
             li.l-letter: a.label.label-default(href='#') tag
             - }
+  +modal('EXIF')
+    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   script(src="//code.jquery.com/jquery-3.1.1.min.js")
   script(src="js/main.js")
