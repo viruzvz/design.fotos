@@ -21,4 +21,5 @@ $(document).ready(function () {
     locale: Portuguese,
     mode: 'range'
   })
+  $('.Mosaico').appendTo('#js-mosaico')
 })

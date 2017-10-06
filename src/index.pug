@@ -19,11 +19,11 @@ block content
     .Mosaico-container
       .Mosaico-banda.hidden-xs
         .Mask
-        - for (var i = 0; i < 4; i++) {
+        - for (var i = 0; i < 5; i++) {
         +mosaico
         - }
       .Mosaico-banda.hidden-xs
-        - for (var i = 0; i < 4; i++) {
+        - for (var i = 0; i < 5; i++) {
         +mosaico
         - }
       .Mosaico-painel
@@ -31,12 +31,12 @@ block content
           .Mosaico-square
         - }
       .Mosaico-banda.hidden-xs
-        - for (var i = 0; i < 4; i++) {
+        - for (var i = 0; i < 5; i++) {
         +mosaico
         - }
       .Mosaico-banda.hidden-xs
         .Mask.Mask--inverse
-        - for (var i = 0; i < 4; i++) {
+        - for (var i = 0; i < 5; i++) {
         +mosaico
         - }
   .container
@@ -48,7 +48,7 @@ block content
               .Arrange-fill
                 input.form-control(type='text', placeholder='insira palavra(s)-chave')
               .Arrange-fit
-                a.btn.btn-success(href='resultados.html') Buscar
+                a.btn.btn-primary(href='resultados.html') Buscar
       .col-md-12.Segments.u-spacer--xl
         .Apex.Apex--default.delta.u-spacer--lg Galeria
       .col-md-12
