@@ -1,8 +1,8 @@
 mixin thumbs(text, css)
   .Mosaico-link
-    a(href='visualizador.html')
+    a(href='visualizador.html').Embed.Embed--1by1
       - var seed = Math.random()
-      img.img-responsive(src='https://unsplash.it/800/800?random&seed=' + seed , alt='One')
+      img.img-responsive(src='https://unsplash.it/800/1200?random&seed=' + seed , alt='One')
       .img-overlay
         .text
           span.glyphicon.glyphicon-zoom-in
