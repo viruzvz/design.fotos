@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "mosaaaico2": "fabianonunes/mosaaaico2#develop",
+    "pug-cli": "^1.0.0-alpha6",
     "standard": "^10.0.2",
     "stylelint": "^7.10.1",
     "yaml-loader": "^0.4.0"
