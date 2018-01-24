@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "mosaaaico2 build",
+    "html": "pug -b node_modules -o dist src/*.pug",
+    "build": "mosaaaico2 build && npm run html",
     "dev": "mosaaaico2 dev",
     "test": "standard && stylelint src/**/*.{less,css}"
   },
