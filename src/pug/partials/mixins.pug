@@ -135,9 +135,19 @@ mixin filtros
 
 mixin carousel-buttons
   .carousel-buttons
-    a(href='https://unsplash.it/1280/768.jpg?image=251', title='Full Screem' data-toggle="lightbox"  data-gallery="example-gallery")
-      span.glyphicon.glyphicon-resize-full
-    a(href='#', title='Compartilhar')
-      span.glyphicon.glyphicon-share-alt
-    a(href='#', title='Download')
-      span.glyphicon.glyphicon-cloud-download
+    span.btn-group.l-box
+      a(href='https://unsplash.it/1280/768.jpg?image=251', title='Full Screem' data-toggle="lightbox"  data-gallery="example-gallery")
+        span.glyphicon.glyphicon-resize-full
+    span.btn-group.l-box
+      a.dropdown-toggle(href='#', title='Compartilhar', data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+        span.glyphicon.glyphicon-share-alt
+      ul.dropdown-menu
+        li: a(href='#') Facebook
+        li: a(href='#') Twitter
+    span.btn-group.l-box
+      a.dropdown-toggle(href='#', title='Download', data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+        span.glyphicon.glyphicon-cloud-download
+      ul.dropdown-menu
+        li: a(href='#') Large 1280 x 768
+        li: a(href='#') Small 800 x 768 
+      
