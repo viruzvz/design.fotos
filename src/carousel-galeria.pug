@@ -18,29 +18,34 @@ block content
   .full-container.u-spacer--xl.l-box--screen(class='+graydeep')
     .container.u-posRelative
       .row
+        .col-md-12.u-spacer--xl
+          a.milli.white(href='#')
+            .glyphicon.glyphicon-arrow-left
+            | &nbsp; Voltar para mostra
         .col-md-12
           #carousel-custom.carousel.slide(data-ride='carousel')
             .carousel-outer
               // Wrapper for slides
-              .carousel-inner
+              .carousel-inner.u-spacer--xl
                 mixin item(active, embed, src, clss)
                   .item(class=active)
                     div(class=embed)
                       img(src=src, alt='', class=clss)
-                +item('active ', 'noEmbed', 'https://unsplash.it/1280x3800?image=0&text=slide0','')
-                +item('', 'noEmbed', 'https://unsplash.it/800x800?image=1&text=slide1','')
-                +item('', 'noEmbed', 'https://unsplash.it/500x800?image=2&text=slide2','')
-                +item('', 'noEmbed', 'https://unsplash.it/900x400?image=3&text=slide3','')
-                +item('', 'noEmbed', 'https://unsplash.it/780x340?image=4&text=slide4','')
-                +item('', 'noEmbed', 'https://unsplash.it/800x600?image=5&text=slide5','')
-                +item('', 'noEmbed', 'https://unsplash.it/1240x780?image=6&text=slide6','')
-                +item('', 'noEmbed', 'https://unsplash.it/1240x800?image=7&text=slide7','')
-                +item('', 'noEmbed', 'https://unsplash.it/900x500?image=8&text=slide8','')
-                +item('', 'noEmbed', 'https://unsplash.it/400x800?image=9&text=slide9','')
-                +item('', 'noEmbed', 'https://unsplash.it/400x800?image=10&text=slide10','')
-                +item('', 'noEmbed', 'https://unsplash.it/400x800?image=11&text=slide11','')
-                +item('', 'noEmbed', 'https://unsplash.it/400x800?image=12&text=slide12','')
+                +item('active ', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/1280x768?image=0&text=slide0','')
+                +item('', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/800x800?image=1&text=slide1','')
+                +item('', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/500x800?image=2&text=slide2','')
+                +item('', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/900x400?image=3&text=slide3','')
+                +item('', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/780x340?image=4&text=slide4','')
+                +item('', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/800x600?image=5&text=slide5','')
+                +item('', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/1240x780?image=6&text=slide6','')
+                +item('', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/1240x800?image=7&text=slide7','')
+                +item('', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/900x500?image=8&text=slide8','')
+                +item('', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/400x800?image=9&text=slide9','')
+                +item('', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/400x800?image=10&text=slide10','')
+                +item('', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/400x800?image=11&text=slide11','')
+                +item('', 'Embed Embed--1by1 Embed--fixed img-responsive', 'https://unsplash.it/400x800?image=12&text=slide12','')
               // Controls
+              .white.text-center Nome do Album
               a.left.carousel-control(href='#carousel-custom', data-slide='prev')
                 span.glyphicon.glyphicon-chevron-left
               a.right.carousel-control(href='#carousel-custom', data-slide='next')
@@ -75,10 +80,41 @@ block content
       .col-md-12.Segments.u-spacer--xl
         .Apex.Apex--default.delta.u-spacer--lg Outras Vitrines
       .col-md-12
-        .row.u-spacer--xl
-          - for (var i = 0; i < 6; i++) {
-            .col-md-2.col-xs-6.u-spacer--xl
-              +thumbs
+        .u-spacer--xl
+          .Deck.Deck--strip.Deck--row
+            - for (var i = 0; i < 4; i++) {
+              .Card.u-sizelof4
+                .Card-body.Segments.u-spacer--xl
+                  +thumbs
+                  span.label.label-default.milli
+                    .glyphicon.glyphicon-picture
+                    | &nbsp; 312
+                  h3.eta 
+                    i Titulo
+            - }
+        .u-spacer--xl
+          .Deck.Deck--strip.Deck--row
+            - for (var i = 0; i < 4; i++) {
+              .Card.u-sizelof4
+                .Card-body.Segments.u-spacer--xl
+                  +thumbs
+                  span.label.label-default.milli
+                    .glyphicon.glyphicon-picture
+                    | &nbsp; 312
+                  h3.eta 
+                    i Titulo
+            - }
+        .u-spacer--xl
+          .Deck.Deck--strip.Deck--row
+            - for (var i = 0; i < 4; i++) {
+              .Card.u-sizelof4
+                .Card-body.Segments.u-spacer--xl
+                  +thumbs
+                  span.label.label-default.milli
+                    .glyphicon.glyphicon-picture
+                    | &nbsp; 312
+                  h3.eta 
+                    i Titulo
             - }
   script(src="//code.jquery.com/jquery-3.1.1.min.js")
   script(src="js/main.js")

@@ -160,6 +160,12 @@
   transition: .5s ease;
   background-color: #333;
 }
+.white {
+  color:#fff;
+  &:hover {
+    color: #ccc;
+  }
+}
 .text {
   color: white;
   font-size: 20px;
@@ -230,7 +236,7 @@
   }
   .carousel-outer {
       position: relative;
-      height: 70vh;
+    //  height: 70vh;
   }
   .carousel-control {
     width: 5%;
@@ -287,11 +293,14 @@
   margin: 30px auto 0 auto;
   max-width: 600px;
 }
+.dropdown-fix {
+  left:40% !important;
+}
 .carousel-buttons {
   max-width: 600px;
   position: relative;
   margin: 30px auto 0 auto;
-  display: inline-block;
+  display: block;
   a {
     color: #ccc;
       &:hover {
